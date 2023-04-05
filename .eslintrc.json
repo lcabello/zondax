@@ -17,5 +17,16 @@
         "react"
     ],
     "rules": {
-    }
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "import/no-extraneous-dependencies": 0,
+        "max-len": 0,
+        "no-unused-vars": 1
+    },
+    "ignorePatterns": [
+        "node_modules/",
+        "build/",
+        "dist/",
+        "config"
+    ]
+
 }

@@ -64,7 +64,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "eslintConfig": {
     "extends": [
@@ -114,11 +114,14 @@
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js",
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.m?js$": "babel-jest"
     },
     "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
+      "/node_modules/",
+      "^.+\\.module\\.(css|sass|scss)$",
+      "/node_modules/(?!(.*\\.css)$)/"
     ],
     "modulePaths": [],
     "moduleNameMapper": {

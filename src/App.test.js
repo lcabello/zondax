@@ -1,8 +1,13 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('./components/IzariPlayground', () => () => <div>IzariPlayground</div>);
+
+test('renders app', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/Izari Filecoin/i);
+  expect(titleElement).toBeInTheDocument();
+  const playgroundElement = screen.getByText(/IzariPlayground/i);
+  expect(playgroundElement).toBeInTheDocument();
 });

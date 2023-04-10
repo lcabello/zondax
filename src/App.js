@@ -39,7 +39,7 @@ function App() {
       <Container maxWidth="md">
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <img src={logo} alt="Izari logo" className={classes.logo} />
+            {/* <img src={logo} alt="Izari logo" className={classes.logo} /> */}
             <Typography variant="h4" component="h1" gutterBottom>
               Izari
             </Typography>
